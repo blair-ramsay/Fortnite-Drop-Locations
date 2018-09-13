@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+    <link rel="stylesheet" href="assets/css/Pulse-Button-on-Hover-1.css">
+    <link rel="stylesheet" href="assets/css/Pulse-Button-on-Hover.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<style>
+  #locname{
+    font-family:'Luckiest Guy', cursive;
+  }
+</style>
+<script>
+
+  var locations = ["Loot Lake", "Lazy Links", "Junk Junction", "Haunted Hills",
+  "Pleasant Park", "Tilted Towers", "Flush Factory", "Snobby Shores", "Tomato Town",
+"Greasy Grove", "Shifty Shafts", "Fatal Fields", "Lucky Landing", "Salty Springs",
+"Lonely Lodge", "Paradise Palms", "Dusty Divot", "Wailing Woods", "Risky Reels", "Retail Row"];
+
+  function generate(){
+    var rand = locations[Math.floor(Math.random() * locations.length)];
+    document.getElementById('loc').innerHTML = "<h2 id='locname'>" + rand + "</h2>";
+    document.getElementById('mapdiv').innerHTML = '<img src="assets/img/' + rand + '.jpg">';
+    $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
+  }
+
+</script>
+<body>
+    <div id="top">
+        <div class="jumbotron">
+            <h1 style="font-family:'Luckiest Guy', cursive;font-size:66px;">FORTNITE DROP LOCATIONS</h1>
+            <p style="font-size:21px;font-family:Adamina, serif;">Click below to generate a random drop location in Fortnite, up to date for season 5!</p>
+            <div id="button">
+              <div>
+                <a class="pulseBtn" onclick="generate();">GENERATE</a>
+              </div>
+            </div>
+        </div>
+    </div><br>
+    <div id="loc"></div>
+    <div id="mapdiv"></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
